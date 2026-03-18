@@ -6,47 +6,51 @@
 <title>Artist Tour Pass (ATP) — Now Everyone Can Tour Asia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --bg:#0D0D1A;
-  --card:#161628;
-  --violet:#7C3AED;
-  --pink:#EC4899;
-  --cyan:#06B6D4;
+  --bg:#080810;
+  --surface:#0F0F1E;
+  --card:#13131F;
+  --border:rgba(255,255,255,0.06);
+  --violet:#8B5CF6;
+  --fuchsia:#D946EF;
+  --amber:#F59E0B;
+  --cyan:#22D3EE;
   --green:#1DB954;
-  --text:#ffffff;
-  --muted:#94A3B8;
-  --border:rgba(255,255,255,0.08);
-  --glass:rgba(255,255,255,0.04);
+  --text:#FFFFFF;
+  --muted:#71717A;
+  --subtle:#3F3F52;
+  --glass:rgba(255,255,255,0.03);
 }
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
 h1,h2,h3,h4{font-family:'DM Sans',sans-serif}
-.gradient-text{background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.gradient-text{background:linear-gradient(135deg,var(--violet),var(--fuchsia));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .gradient-text-cyan{background:linear-gradient(135deg,var(--cyan),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:600;font-size:14px;cursor:pointer;transition:all 0.3s ease;border:none;text-decoration:none}
-.btn-primary{background:linear-gradient(135deg,var(--violet),var(--pink));color:#fff}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(124,58,237,0.4)}
-.btn-secondary{background:transparent;color:#fff;border:1px solid var(--border)}
-.btn-secondary:hover{border-color:var(--violet);background:rgba(124,58,237,0.1)}
+.btn-primary{background:linear-gradient(135deg,var(--violet),var(--fuchsia));color:#fff}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(139,92,246,0.45)}
+.btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.15)}
+.btn-secondary:hover{border-color:var(--violet);background:rgba(139,92,246,0.1)}
 .btn-green{background:var(--green);color:#000}
 .btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(29,185,84,0.4)}
 .btn-cyan{background:linear-gradient(135deg,var(--cyan),var(--violet));color:#fff}
-.btn-cyan:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(6,182,212,0.4)}
-.glass-card{background:var(--glass);backdrop-filter:blur(20px);border:1px solid var(--border);border-radius:16px;transition:all 0.3s ease}
-.glass-card:hover{border-color:rgba(124,58,237,0.3);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.btn-cyan:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(34,211,238,0.4)}
+.glass-card{background:var(--card);border:1px solid var(--border);border-radius:16px;transition:all 0.3s ease}
+.glass-card:hover{border-color:rgba(139,92,246,0.25);transform:translateY(-4px);box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(139,92,246,0.1) inset}
 .container{max-width:1200px;margin:0 auto;padding:0 24px}
 .section{padding:80px 0}
 .section-label{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--cyan);margin-bottom:12px}
-.section-title{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.2;margin-bottom:16px}
+.section-title{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.2;letter-spacing:-0.02em;margin-bottom:16px}
 .section-sub{font-size:16px;color:var(--muted);max-width:600px}
 .fade-in{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 .fade-in.visible{opacity:1;transform:translateY(0)}
+.section-divider-line{height:1px;background:linear-gradient(90deg,transparent,rgba(139,92,246,0.3),transparent);margin:0;border:none}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(13,13,26,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rgba(8,8,16,0.88);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
 .nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
 .nav-logo{display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;font-size:22px;font-weight:800;text-decoration:none;color:#fff}
 .nav-links{display:flex;align-items:center;gap:28px;list-style:none}
@@ -55,7 +59,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rg
 .nav-ctas{display:flex;gap:12px;align-items:center}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all 0.3s}
-.mobile-menu{display:none;position:fixed;top:65px;left:0;right:0;background:rgba(13,13,26,0.97);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:24px;z-index:99}
+.mobile-menu{display:none;position:fixed;top:65px;left:0;right:0;background:rgba(8,8,16,0.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:24px;z-index:99}
 .mobile-menu.open{display:block}
 .mobile-menu ul{list-style:none;display:flex;flex-direction:column;gap:16px;margin-bottom:20px}
 .mobile-menu ul a{color:var(--muted);text-decoration:none;font-size:16px;font-weight:500}
@@ -63,33 +67,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rg
 
 /* HERO */
 #hero{padding:140px 0 80px;min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;pointer-events:none}
-.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.15}
-.hero-orb-1{width:500px;height:500px;background:var(--violet);top:-100px;left:-100px}
-.hero-orb-2{width:400px;height:400px;background:var(--pink);bottom:-100px;right:-50px}
-.hero-orb-3{width:300px;height:300px;background:var(--cyan);top:50%;left:50%;transform:translate(-50%,-50%)}
-#hero h1{font-size:clamp(36px,6vw,72px);font-weight:800;line-height:1.1;margin-bottom:20px}
-#hero .hero-sub{font-size:clamp(16px,2vw,20px);color:var(--muted);max-width:560px;margin-bottom:36px}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px}
-.hero-visual{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:420px;margin-top:48px}
-@media(min-width:900px){#hero .hero-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.hero-visual{margin-top:0}}
-.hero-mini-card{background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center}
-.hero-mini-card .hm-stat{font-size:20px;font-weight:800;font-family:'DM Sans',sans-serif}
-.hero-mini-card .hm-label{font-size:11px;color:var(--muted);margin-top:4px}
+.hero-spotlight{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 60% at 30% 50%,rgba(139,92,246,0.12) 0%,rgba(217,70,239,0.07) 40%,transparent 70%)}
+.hero-grain{position:absolute;inset:0;pointer-events:none;opacity:0.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");background-size:200px 200px}
+.hero-wrap{display:flex;flex-direction:column;gap:48px;align-items:flex-start}
+@media(min-width:900px){.hero-wrap{display:grid;grid-template-columns:60% 40%;gap:60px;align-items:center}}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.3);color:var(--amber);font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:6px 14px;border-radius:50px;margin-bottom:20px}
+#hero h1{font-size:clamp(42px,7vw,84px);font-weight:800;line-height:1.0;letter-spacing:-0.03em;margin-bottom:20px}
+#hero h1 .line1{color:#fff;font-weight:800;display:block}
+#hero h1 .line2{background:linear-gradient(135deg,var(--violet),var(--fuchsia));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+#hero .hero-sub{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:520px;margin-bottom:36px;line-height:1.7}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.hero-social-proof{font-size:13px;color:var(--muted);letter-spacing:0.02em}
+.hero-social-proof span{color:var(--subtle)}
 
-/* STATS */
-#stats{padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
-.stats-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
-@media(min-width:640px){.stats-grid{grid-template-columns:repeat(4,1fr)}}
-.stat-item{text-align:center}
-.stat-number{font-size:clamp(28px,4vw,42px);font-weight:800;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-label{font-size:13px;color:var(--muted);margin-top:4px}
+/* POSTER COLLAGE */
+.hero-poster-zone{position:relative;width:100%;height:460px;display:none}
+@media(min-width:900px){.hero-poster-zone{display:block}}
+.poster-item{position:absolute;width:180px;border-radius:12px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.6);cursor:pointer;transition:transform 0.35s cubic-bezier(0.22,1,0.36,1),z-index 0s,box-shadow 0.35s ease}
+.poster-item img{width:100%;height:100%;object-fit:cover;display:block}
+.poster-item:nth-child(1){top:20px;left:10px;transform:rotate(-8deg);z-index:1}
+.poster-item:nth-child(2){top:40px;left:130px;transform:rotate(3deg);z-index:2}
+.poster-item:nth-child(3){top:160px;left:60px;transform:rotate(-3deg);z-index:3}
+.poster-item:nth-child(4){top:100px;left:220px;transform:rotate(6deg);z-index:2}
+.poster-item:hover{transform:rotate(0deg) scale(1.04)!important;z-index:10!important;box-shadow:0 30px 80px rgba(0,0,0,0.7),0 0 40px rgba(139,92,246,0.25)}
+
+/* Mobile poster scroll */
+.hero-poster-scroll{display:flex;gap:12px;overflow-x:auto;padding-bottom:8px;scrollbar-width:none}
+.hero-poster-scroll::-webkit-scrollbar{display:none}
+.hero-poster-scroll img{width:120px;height:180px;object-fit:cover;border-radius:10px;flex-shrink:0;box-shadow:0 12px 32px rgba(0,0,0,0.5)}
+@media(min-width:900px){.hero-poster-scroll{display:none}}
 
 /* HOW IT WORKS */
-#how{background:linear-gradient(180deg,rgba(124,58,237,0.05) 0%,transparent 100%)}
+#how{background:linear-gradient(180deg,rgba(139,92,246,0.04) 0%,transparent 100%)}
 .steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
-.step-card{padding:32px;position:relative}
-.step-num{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--violet),var(--pink));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;font-family:'DM Sans',sans-serif;margin-bottom:20px}
+.step-card{padding:32px 28px;position:relative;border-left:3px solid var(--amber)}
+.step-num{width:48px;height:48px;border-radius:50%;background:var(--amber);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px;font-family:'DM Sans',sans-serif;color:#000;margin-bottom:20px}
 .step-card h3{font-size:20px;font-weight:700;margin-bottom:10px}
 .step-card p{color:var(--muted);font-size:15px}
 
@@ -97,16 +109,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rg
 .browse-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:32px}
 .artists-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
 .artist-card{padding:24px}
-.artist-avatar{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;font-family:'DM Sans',sans-serif;margin-bottom:0;flex-shrink:0}
+.artist-avatar{width:80px;height:80px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:26px;font-family:'DM Sans',sans-serif;flex-shrink:0}
 .artist-header{display:flex;align-items:center;gap:16px;margin-bottom:12px}
 .artist-name{font-size:18px;font-weight:700;font-family:'DM Sans',sans-serif}
 .artist-location{font-size:13px;color:var(--muted)}
 .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
 .tag{padding:4px 12px;border-radius:50px;font-size:12px;font-weight:500}
-.tag-genre{background:rgba(124,58,237,0.2);color:#a78bfa}
-.tag-avail{background:rgba(6,182,212,0.15);color:var(--cyan)}
+.tag-genre{background:rgba(139,92,246,0.18);color:#c4b5fd}
+.tag-avail{background:rgba(34,211,238,0.12);color:var(--cyan)}
 .tag-market{font-size:16px;padding:2px 6px;background:rgba(255,255,255,0.06);border-radius:8px}
-.spotify-block{background:rgba(29,185,84,0.08);border:1px solid rgba(29,185,84,0.2);border-radius:12px;padding:14px;margin-bottom:14px}
+.spotify-block{background:rgba(29,185,84,0.07);border:1px solid rgba(29,185,84,0.25);border-radius:12px;padding:14px;margin-bottom:14px;box-shadow:0 0 0 0 rgba(29,185,84,0);transition:box-shadow 0.3s}
+.artist-card:hover .spotify-block{box-shadow:0 0 20px rgba(29,185,84,0.12)}
 .spotify-block-header{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--green);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px}
 .spotify-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .spotify-stat .val{font-size:16px;font-weight:700;color:var(--green)}
@@ -116,13 +129,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rg
 .artist-card-btns{display:flex;gap:10px}
 .artist-card-btns .btn{flex:1;justify-content:center;padding:10px 16px;font-size:13px}
 
-
 /* SPOTIFY FEATURE */
-#spotify-feature{background:linear-gradient(135deg,rgba(29,185,84,0.08),rgba(124,58,237,0.08));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+#spotify-feature{background:linear-gradient(135deg,rgba(29,185,84,0.06),rgba(139,92,246,0.06));border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .spotify-feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:32px 0}
-.sf-card{padding:24px;border:1px solid rgba(29,185,84,0.2);background:rgba(29,185,84,0.06);border-radius:16px;transition:all 0.3s}
-.sf-card:hover{border-color:rgba(29,185,84,0.5);transform:translateY(-4px)}
-.sf-icon{font-size:28px;margin-bottom:12px}
+.sf-card{padding:24px;border:1px solid rgba(29,185,84,0.18);background:rgba(29,185,84,0.05);border-radius:16px;transition:all 0.3s}
+.sf-card:hover{border-color:rgba(29,185,84,0.45);transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,0.3)}
+.sf-icon{margin-bottom:14px;display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:10px;background:rgba(245,158,11,0.15);color:var(--amber)}
 .sf-card h4{font-size:16px;font-weight:700;margin-bottom:6px}
 .sf-card p{font-size:14px;color:var(--muted)}
 .spotify-note{font-size:13px;color:var(--muted);margin-bottom:20px}
@@ -130,13 +142,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rg
 
 /* MARKETS */
 .markets-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px;margin-top:40px}
-.market-card{padding:20px 16px;text-align:center;cursor:default}
+.market-card{padding:20px 16px;text-align:center;cursor:default;transition:all 0.3s}
+.market-card:hover{box-shadow:0 0 30px rgba(245,158,11,0.12),0 0 0 1px rgba(245,158,11,0.15) inset;border-color:rgba(245,158,11,0.2)!important}
 .market-flag{font-size:32px;margin-bottom:8px}
 .market-name{font-size:15px;font-weight:600;margin-bottom:4px}
 .market-stat{font-size:12px;color:var(--cyan)}
 
+/* PAST SHOWS — Poster Grid */
+#past-shows{background:var(--surface)}
+.ps-filter-area{display:flex;justify-content:center;gap:10px;margin-bottom:36px}
+.ps-filter-btn{padding:9px 24px;border-radius:50px;font-weight:600;font-size:14px;cursor:pointer;border:1px solid rgba(255,255,255,0.12);background:transparent;color:var(--muted);transition:all 0.3s;font-family:'Inter',sans-serif}
+.ps-filter-btn.active,.ps-filter-btn:hover{background:var(--amber);color:#000;border-color:var(--amber)}
+.past-shows-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.ps-card{aspect-ratio:2/3;border-radius:12px;overflow:hidden;position:relative;cursor:pointer;transition:transform 0.3s ease,box-shadow 0.3s ease}
+.ps-card:hover{transform:scale(1.02);box-shadow:0 24px 60px rgba(0,0,0,0.6)}
+.ps-card-img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.4s ease}
+.ps-card:hover .ps-card-img{transform:scale(1.05)}
+.ps-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,0.88) 0%,rgba(0,0,0,0.4) 50%,transparent 100%);opacity:0;transition:opacity 0.3s ease;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.ps-card:hover .ps-card-overlay{opacity:1}
+.ps-card-name{font-size:14px;font-weight:700;color:#fff;font-family:'DM Sans',sans-serif;margin-bottom:4px;line-height:1.3}
+.ps-card-city{font-size:12px;color:rgba(255,255,255,0.7)}
+.ps-card-year-badge{position:absolute;top:10px;right:10px;font-size:10px;font-weight:700;padding:3px 9px;border-radius:50px;letter-spacing:0.5px}
+.ps-card-year-badge.y2026{background:rgba(139,92,246,0.3);color:#c4b5fd;backdrop-filter:blur(8px)}
+.ps-card-year-badge.y2025{background:rgba(245,158,11,0.25);color:var(--amber);backdrop-filter:blur(8px)}
+.ps-placeholder{background:linear-gradient(135deg,var(--card),var(--subtle));display:flex;align-items:center;justify-content:center;font-size:32px}
+
 /* TESTIMONIALS */
-#testimonials{background:linear-gradient(180deg,rgba(236,72,153,0.05) 0%,transparent 100%)}
+#testimonials{background:linear-gradient(180deg,rgba(217,70,239,0.04) 0%,transparent 100%)}
 .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:40px}
 .testi-card{padding:28px}
 .testi-quote{font-size:15px;line-height:1.7;margin-bottom:16px;color:#e2e8f0;position:relative;padding-left:20px}
@@ -146,17 +178,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rg
 .testi-name{font-size:14px;font-weight:600}
 .testi-role{font-size:12px;color:var(--muted)}
 .testi-type{display:inline-block;padding:2px 10px;border-radius:50px;font-size:11px;font-weight:600;margin-bottom:12px}
-.testi-artist{background:rgba(124,58,237,0.2);color:#a78bfa}
-.testi-promoter{background:rgba(6,182,212,0.2);color:var(--cyan)}
-
+.testi-artist{background:rgba(139,92,246,0.18);color:#c4b5fd}
+.testi-promoter{background:rgba(34,211,238,0.15);color:var(--cyan)}
 
 /* MODALS */
-.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.8);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.85);backdrop-filter:blur(10px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
 .modal-overlay.open{display:flex}
-.modal{background:#161628;border:1px solid var(--border);border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;padding:36px;position:relative;animation:modalIn 0.3s ease}
+.modal{background:#0F0F1E;border:1px solid var(--border);border-radius:20px;width:100%;max-width:680px;max-height:90vh;overflow-y:auto;padding:36px;position:relative;animation:modalIn 0.3s ease}
 @keyframes modalIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
-.modal-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.08);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
-.modal-close:hover{background:rgba(255,255,255,0.15)}
+.modal-close{position:absolute;top:20px;right:20px;background:rgba(255,255,255,0.07);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.modal-close:hover{background:rgba(255,255,255,0.14)}
 .modal h2{font-size:24px;font-weight:800;margin-bottom:6px}
 .modal-sub{font-size:14px;color:var(--muted);margin-bottom:28px}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
@@ -165,10 +196,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 0;background:rg
 .form-group.full{grid-column:1/-1}
 .form-group label{font-size:13px;font-weight:500;color:#cbd5e1}
 .form-group label .optional{color:var(--muted);font-weight:400}
-.form-control{background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
+.form-control{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:11px 14px;color:#fff;font-size:14px;font-family:'Inter',sans-serif;outline:none;transition:border-color 0.2s;width:100%}
 .form-control:focus{border-color:var(--violet)}
 .form-control::placeholder{color:var(--muted)}
-select.form-control option{background:#1e1e3a;color:#fff}
+select.form-control option{background:#0F0F1E;color:#fff}
 textarea.form-control{resize:vertical;min-height:80px}
 .spotify-input-wrap{position:relative}
 .spotify-input-wrap .sp-ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);display:flex;align-items:center}
@@ -177,7 +208,7 @@ textarea.form-control{resize:vertical;min-height:80px}
 .char-count{font-size:11px;color:var(--muted);text-align:right;margin-top:2px}
 .markets-check-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:8px}
 .check-item{display:flex;align-items:center;gap:8px;cursor:pointer;padding:8px 10px;border-radius:8px;border:1px solid var(--border);transition:all 0.2s;font-size:13px}
-.check-item:hover{border-color:var(--violet);background:rgba(124,58,237,0.08)}
+.check-item:hover{border-color:var(--violet);background:rgba(139,92,246,0.08)}
 .check-item input{accent-color:var(--violet);width:14px;height:14px;flex-shrink:0}
 .months-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
 .section-divider{border:none;border-top:1px solid var(--border);margin:20px 0}
@@ -193,12 +224,12 @@ textarea.form-control{resize:vertical;min-height:80px}
 .modal-footer .btn{width:100%;justify-content:center;padding:14px}
 
 /* TOAST */
-.toast{position:fixed;bottom:32px;right:32px;background:rgba(29,185,84,0.15);border:1px solid rgba(29,185,84,0.4);color:#fff;padding:16px 24px;border-radius:12px;font-size:14px;font-weight:500;z-index:300;display:none;align-items:center;gap:10px;backdrop-filter:blur(20px);max-width:360px}
+.toast{position:fixed;bottom:32px;right:32px;background:rgba(29,185,84,0.12);border:1px solid rgba(29,185,84,0.35);color:#fff;padding:16px 24px;border-radius:12px;font-size:14px;font-weight:500;z-index:300;display:none;align-items:center;gap:10px;backdrop-filter:blur(20px);max-width:360px}
 .toast.show{display:flex;animation:toastIn 0.4s ease}
 @keyframes toastIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
 /* FOOTER */
-footer{padding:48px 0 32px;border-top:1px solid var(--border)}
+footer{padding:48px 0 32px;border-top:1px solid var(--border);background:#080810}
 .footer-inner{display:grid;grid-template-columns:1fr;gap:32px}
 @media(min-width:640px){.footer-inner{grid-template-columns:2fr 1fr 1fr 1fr}}
 .footer-brand p{font-size:14px;color:var(--muted);margin-top:10px;max-width:260px}
@@ -212,14 +243,15 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 @media(max-width:768px){
   .nav-links,.nav-ctas{display:none}
   .hamburger{display:flex}
-  .hero-visual{display:none}
   .form-grid{grid-template-columns:1fr}
   .months-grid{grid-template-columns:repeat(3,1fr)}
   .modal{padding:24px}
+  .past-shows-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 }
 @media(max-width:480px){
   .markets-check-grid{grid-template-columns:repeat(2,1fr)}
   .months-grid{grid-template-columns:repeat(2,1fr)}
+  .past-shows-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
@@ -230,14 +262,14 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
   <div class="container nav-inner">
     <a href="#" class="nav-logo">
       <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <defs><linearGradient id="nlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs>
+        <defs><linearGradient id="nlg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#D946EF"/></linearGradient></defs>
         <circle cx="14" cy="14" r="13" fill="url(#nlg)" opacity="0.2" stroke="url(#nlg)" stroke-width="1.5"/>
         <path d="M8 19V11l3-2v6M14 19V9l3-2v8M20 19V13" stroke="url(#nlg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         <circle cx="8" cy="19" r="1.5" fill="url(#nlg)"/>
         <circle cx="14" cy="19" r="1.5" fill="url(#nlg)"/>
         <circle cx="20" cy="19" r="1.5" fill="url(#nlg)"/>
       </svg>
-      Artist Tour Pass <span style="font-size:13px;font-weight:600;opacity:0.6;letter-spacing:0.05em">ATP</span>
+      Artist Tour Pass <span style="font-size:13px;font-weight:600;opacity:0.5;letter-spacing:0.05em">ATP</span>
     </a>
     <ul class="nav-links">
       <li><a href="#how">How It Works</a></li>
@@ -267,46 +299,51 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg">
-    <div class="hero-orb hero-orb-1"></div>
-    <div class="hero-orb hero-orb-2"></div>
-    <div class="hero-orb hero-orb-3"></div>
-  </div>
+  <div class="hero-spotlight"></div>
+  <div class="hero-grain"></div>
   <div class="container">
     <div class="hero-wrap">
+      <!-- LEFT -->
       <div class="fade-in">
-        <div id="hero-artist">
-          <h1>Now Everyone<br><span class="gradient-text">Can Tour Asia.</span></h1>
-          <p class="hero-sub">Bridging the gap between streaming numbers and real fans — connect with 200+ promoters across 12 Asian markets and turn your audience into a live show.</p>
-          <div class="hero-ctas">
-            <button class="btn btn-primary" onclick="openModal('artist-modal')">Create Artist Profile</button>
-            <a href="#artists-browse" class="btn btn-secondary">Browse Artists</a>
-          </div>
+        <div class="hero-badge">&#9733; Asia's Independent Tour Platform</div>
+        <h1>
+          <span class="line1">Now Everyone</span>
+          <span class="line2">Can Tour Asia.</span>
+        </h1>
+        <p class="hero-sub">Bridging the gap between streaming numbers and real fans. Link your Spotify. Get discovered. Play the show.</p>
+        <div class="hero-ctas">
+          <button class="btn btn-primary" onclick="openModal('artist-modal')">Create Artist Profile</button>
+          <a href="#past-shows" class="btn btn-secondary">See Past Shows &#8595;</a>
+        </div>
+        <p class="hero-social-proof">Trusted by artists from &#127474;&#127486; &#127480;&#127468; &#127477;&#127469; &#127481;&#127469; &#127471;&#127477; &#127481;&#127484; &#127472;&#127479; &#127469;&#127472; &#127470;&#127465; &#127464;&#127475;</p>
+      </div>
+      <!-- RIGHT — poster collage desktop -->
+      <div class="hero-poster-zone fade-in">
+        <div class="poster-item" style="top:30px;left:20px;height:260px">
+          <img src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/af0e341c-31c8-4356-842f-4c52b2897f06/The+Click+Five+KL+2.png" alt="The Click Five KL" loading="lazy">
+        </div>
+        <div class="poster-item" style="top:10px;left:180px;height:240px">
+          <img src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/4c603c8e-ecab-4d24-a598-a92bab5be852/Greyson+Chance+Poster+-+Greyson+Chance+Live+in+Singapore+-+Poster.png" alt="Greyson Chance Singapore" loading="lazy">
+        </div>
+        <div class="poster-item" style="top:190px;left:80px;height:260px">
+          <img src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/a87f5dfe-0944-4bf4-86a3-74b1a076057d/Keenan+Te+Live+in+Tokyo+-+Poster.png" alt="Keenan Te Tokyo" loading="lazy">
+        </div>
+        <div class="poster-item" style="top:120px;left:300px;height:250px">
+          <img src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/7126ea0d-b196-4da1-8025-efc0a96b5803/Boyce+Avenue.png" alt="Boyce Avenue" loading="lazy">
         </div>
       </div>
-      <div class="hero-visual fade-in">
-        <div class="hero-mini-card"><div class="hm-stat gradient-text">500+</div><div class="hm-label">Artists</div></div>
-        <div class="hero-mini-card"><div class="hm-stat gradient-text">200+</div><div class="hm-label">Promoters</div></div>
-        <div class="hero-mini-card"><div class="hm-stat" style="color:var(--cyan)">12</div><div class="hm-label">Markets</div></div>
-        <div class="hero-mini-card"><div class="hm-stat gradient-text">2K+</div><div class="hm-label">Shows</div></div>
-        <div class="hero-mini-card"><div class="hm-stat" style="color:var(--green)">&#127925;</div><div class="hm-label">Spotify</div></div>
-        <div class="hero-mini-card"><div class="hm-stat">72h</div><div class="hm-label">Avg Reply</div></div>
-      </div>
+    </div>
+    <!-- Mobile poster scroll -->
+    <div class="hero-poster-scroll fade-in" style="margin-top:32px">
+      <img src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/af0e341c-31c8-4356-842f-4c52b2897f06/The+Click+Five+KL+2.png" alt="The Click Five" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/4c603c8e-ecab-4d24-a598-a92bab5be852/Greyson+Chance+Poster+-+Greyson+Chance+Live+in+Singapore+-+Poster.png" alt="Greyson Chance" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/a87f5dfe-0944-4bf4-86a3-74b1a076057d/Keenan+Te+Live+in+Tokyo+-+Poster.png" alt="Keenan Te" loading="lazy">
+      <img src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/7126ea0d-b196-4da1-8025-efc0a96b5803/Boyce+Avenue.png" alt="Boyce Avenue" loading="lazy">
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section id="stats">
-  <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item fade-in"><div class="stat-number" data-target="500">0</div><div class="stat-label">Artists Listed</div></div>
-      <div class="stat-item fade-in"><div class="stat-number" data-target="200">0</div><div class="stat-label">Verified Promoters</div></div>
-      <div class="stat-item fade-in"><div class="stat-number" data-target="12">0</div><div class="stat-label">Asian Markets</div></div>
-      <div class="stat-item fade-in"><div class="stat-number" data-target="2000">0</div><div class="stat-label">Shows Booked</div></div>
-    </div>
-  </div>
-</section>
+<hr class="section-divider-line">
 
 <!-- HOW IT WORKS -->
 <section id="how" class="section">
@@ -316,7 +353,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
       <h2 class="section-title">Touring Asia<br><span class="gradient-text">Shouldn't Be Complicated.</span></h2>
       <p class="section-sub">Whether you have 5,000 monthly listeners or 500,000 — if fans are showing up in your data, ATP helps you turn that into a stage.</p>
     </div>
-    <div style="margin-top:32px" class="fade-in">
+    <div style="margin-top:32px">
       <div class="steps-grid">
         <div class="step-card glass-card fade-in">
           <div class="step-num">1</div>
@@ -338,6 +375,8 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
   </div>
 </section>
 
+<hr class="section-divider-line">
+
 <!-- ARTIST PROFILES -->
 <section id="artists-browse" class="section">
   <div class="container">
@@ -352,7 +391,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 
       <div class="artist-card glass-card fade-in">
         <div class="artist-header">
-          <div class="artist-avatar" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">JL</div>
+          <div class="artist-avatar" style="background:linear-gradient(135deg,#8B5CF6,#D946EF)">JL</div>
           <div><div class="artist-name">Jade Lin</div><div class="artist-location">&#128205; Taipei, Taiwan</div></div>
         </div>
         <div class="tags">
@@ -384,7 +423,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 
       <div class="artist-card glass-card fade-in">
         <div class="artist-header">
-          <div class="artist-avatar" style="background:linear-gradient(135deg,#06B6D4,#7C3AED)">RN</div>
+          <div class="artist-avatar" style="background:linear-gradient(135deg,#22D3EE,#8B5CF6)">RN</div>
           <div><div class="artist-name">Raka Nugraha</div><div class="artist-location">&#128205; Jakarta, Indonesia</div></div>
         </div>
         <div class="tags">
@@ -416,7 +455,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 
       <div class="artist-card glass-card fade-in">
         <div class="artist-header">
-          <div class="artist-avatar" style="background:linear-gradient(135deg,#EC4899,#F59E0B)">MK</div>
+          <div class="artist-avatar" style="background:linear-gradient(135deg,#D946EF,#F59E0B)">MK</div>
           <div><div class="artist-name">Mia Kasumi</div><div class="artist-location">&#128205; Osaka, Japan</div></div>
         </div>
         <div class="tags">
@@ -448,7 +487,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 
       <div class="artist-card glass-card fade-in">
         <div class="artist-header">
-          <div class="artist-avatar" style="background:linear-gradient(135deg,#1DB954,#06B6D4)">DP</div>
+          <div class="artist-avatar" style="background:linear-gradient(135deg,#1DB954,#22D3EE)">DP</div>
           <div><div class="artist-name">Dev Patel (DJ)</div><div class="artist-location">&#128205; Mumbai, India</div></div>
         </div>
         <div class="tags">
@@ -480,7 +519,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 
       <div class="artist-card glass-card fade-in">
         <div class="artist-header">
-          <div class="artist-avatar" style="background:linear-gradient(135deg,#F59E0B,#EC4899)">SC</div>
+          <div class="artist-avatar" style="background:linear-gradient(135deg,#F59E0B,#D946EF)">SC</div>
           <div><div class="artist-name">Soo-Ah Choi</div><div class="artist-location">&#128205; Seoul, South Korea</div></div>
         </div>
         <div class="tags">
@@ -512,7 +551,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 
       <div class="artist-card glass-card fade-in">
         <div class="artist-header">
-          <div class="artist-avatar" style="background:linear-gradient(135deg,#7C3AED,#06B6D4)">AW</div>
+          <div class="artist-avatar" style="background:linear-gradient(135deg,#8B5CF6,#22D3EE)">AW</div>
           <div><div class="artist-name">Anika Wongsa</div><div class="artist-location">&#128205; Bangkok, Thailand</div></div>
         </div>
         <div class="tags">
@@ -546,6 +585,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
   </div>
 </section>
 
+<hr class="section-divider-line">
 
 <!-- SPOTIFY FEATURE -->
 <section id="spotify-feature" class="section">
@@ -557,22 +597,30 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
     </div>
     <div class="spotify-feature-grid fade-in">
       <div class="sf-card">
-        <div class="sf-icon">&#128101;</div>
+        <div class="sf-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
         <h4>Monthly Listeners</h4>
         <p>Your real audience size, live. Promoters see the demand behind your name — not just a bio and a link.</p>
       </div>
       <div class="sf-card">
-        <div class="sf-icon">&#128506;&#65039;</div>
+        <div class="sf-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
         <h4>Listener Geography</h4>
         <p>Where your fans actually are — by city, by market. Promoters know you're relevant before they even say hello.</p>
       </div>
       <div class="sf-card">
-        <div class="sf-icon">&#127925;</div>
+        <div class="sf-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+        </div>
         <h4>Track Performance</h4>
         <p>Your top tracks, your stream counts. One link replaces a pitch deck — and gives promoters everything they need to say yes.</p>
       </div>
       <div class="sf-card">
-        <div class="sf-icon">&#128200;</div>
+        <div class="sf-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
         <h4>Growth Trend</h4>
         <p>Month-on-month momentum. Promoters aren't booking who you are — they're betting on who you're becoming.</p>
       </div>
@@ -586,6 +634,8 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
     </div>
   </div>
 </section>
+
+<hr class="section-divider-line">
 
 <!-- MARKETS -->
 <section id="markets" class="section">
@@ -612,6 +662,303 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
   </div>
 </section>
 
+<hr class="section-divider-line">
+
+<!-- PAST SHOWS -->
+<section id="past-shows" class="section">
+  <div class="container">
+    <div class="fade-in" style="text-align:center">
+      <p class="section-label">Track Record</p>
+      <h2 class="section-title">Shows We've <span class="gradient-text">Produced.</span></h2>
+      <p class="section-sub" style="margin:0 auto 8px">A snapshot of live events brought to Asia by our team — the proof that independent artists can fill rooms across the continent.</p>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:32px;opacity:0.7">By Banyak Bagus Entertainment — the team behind ATP</p>
+      <div class="ps-filter-area">
+        <button class="ps-filter-btn active" onclick="filterShows('all',this)">All</button>
+        <button class="ps-filter-btn" onclick="filterShows('2026',this)">2026</button>
+        <button class="ps-filter-btn" onclick="filterShows('2025',this)">2025</button>
+      </div>
+    </div>
+
+    <div class="past-shows-grid fade-in">
+
+      <!-- 2026 -->
+      <div class="ps-card" data-year="2026">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/a87f5dfe-0944-4bf4-86a3-74b1a076057d/Keenan+Te+Live+in+Tokyo+-+Poster.png" alt="Keenan Te Live in Tokyo" loading="lazy">
+        <span class="ps-card-year-badge y2026">2026</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Keenan Te Live in Tokyo</div>
+          <div class="ps-card-city">Tokyo &#127471;&#127477;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2026">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/5f3522b3-141c-4bcb-a034-316b7825e30f/6.png" alt="Fan Meeting Seoul" loading="lazy" onerror="this.parentNode.classList.add('ps-placeholder');this.style.display='none'">
+        <span class="ps-card-year-badge y2026">2026</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Fan Meeting</div>
+          <div class="ps-card-city">Seoul &#127472;&#127479;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2026">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/2e2311a2-4ab5-4e76-8c94-e3c67c0c7db7/Bounprem+Fan+Meeting.png" alt="Bounprem Fan Meeting Singapore" loading="lazy">
+        <span class="ps-card-year-badge y2026">2026</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Bounprem Fan Meeting</div>
+          <div class="ps-card-city">Singapore &#127480;&#127468;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2026">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/4ca4b44f-8339-4629-8595-a2e68733fa8c/JAY207+Poster+%284%29.png" alt="JAY207 Live in Manila" loading="lazy">
+        <span class="ps-card-year-badge y2026">2026</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">JAY207 Live in Manila</div>
+          <div class="ps-card-city">Manila &#127477;&#127469;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2026">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/8b4d9c68-df68-49a3-a8a6-665c6a1bf6aa/Event+Poster+%28280+x+400%29.png" alt="Live in Manila" loading="lazy">
+        <span class="ps-card-year-badge y2026">2026</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Live in Manila</div>
+          <div class="ps-card-city">Manila &#127477;&#127469;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2026">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/1b0a9932-0a11-4246-bcf2-6a6aa03afe64/Wisp+Live+in+Taiwan+%283%29.png" alt="Wisp Live in Taiwan" loading="lazy">
+        <span class="ps-card-year-badge y2026">2026</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Wisp Live in Taiwan</div>
+          <div class="ps-card-city">Taipei &#127481;&#127484;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2026">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/d2863eaa-368d-43d9-8ffb-0e645a453634/3.png" alt="Live in HK" loading="lazy" onerror="this.parentNode.classList.add('ps-placeholder');this.style.display='none'">
+        <span class="ps-card-year-badge y2026">2026</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Live in HK</div>
+          <div class="ps-card-city">Hong Kong &#127469;&#127472;</div>
+        </div>
+      </div>
+
+      <!-- 2025 -->
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/af0e341c-31c8-4356-842f-4c52b2897f06/The+Click+Five+KL+2.png" alt="The Click Five KL" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">The Click Five</div>
+          <div class="ps-card-city">Kuala Lumpur &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/382c1a00-5176-48fc-8aa9-b1eeb5f679d1/Kentaro+Sakaguchi.png" alt="Kentaro Sakaguchi KL" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Kentaro Sakaguchi</div>
+          <div class="ps-card-city">Kuala Lumpur &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/7a8c0d6b-f9e3-4497-bcd3-ee60d3edd97e/slchld+Live+in+KL+-+Poster.png" alt="slchld Live in KL" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">slchld Live in KL</div>
+          <div class="ps-card-city">Kuala Lumpur &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/1332f2ef-7309-452d-8938-e30e1e8ae5da/NADHIF+BASALAMAH+Poster.zip+-+5.PNG" alt="Nadhif Basalamah KL" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Nadhif Basalamah</div>
+          <div class="ps-card-city">Kuala Lumpur &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/9ede0f86-a733-426f-8666-369dd783f6ad/Jonas+Blue+Poster.png" alt="Jonas Blue KL" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Jonas Blue</div>
+          <div class="ps-card-city">Kuala Lumpur &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/41f200cb-011a-48e5-a78f-ec06f90a23fa/Johnny+Stimson+Tour+Poster+%281%29.png" alt="Johnny Stimson KL" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Johnny Stimson Tour</div>
+          <div class="ps-card-city">Kuala Lumpur &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/202ec913-b4ba-4b8f-b288-e120f4897133/Peder+Elias+Live+in+KL+-+Poster.png" alt="Peder Elias KL" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Peder Elias Live in KL</div>
+          <div class="ps-card-city">Kuala Lumpur &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/0c12abb8-4fe0-42fb-8746-ae7885556825/Hoobastank+Live+in+KL+-+Main+Poster.PNG" alt="Hoobastank Live in KL" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Hoobastank Live in KL</div>
+          <div class="ps-card-city">Kuala Lumpur &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/32595d5f-dbc2-4f94-aa24-599c67251a3e/Nick+Carter+for+Magazine.png" alt="Nick Carter Kota Kinabalu" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Nick Carter</div>
+          <div class="ps-card-city">Kota Kinabalu &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/1ebde828-6aa8-47dd-9d6f-c6bda221bd35/The+Click+Five+KK.PNG" alt="The Click Five Kota Kinabalu" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">The Click Five</div>
+          <div class="ps-card-city">Kota Kinabalu &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/afc3272f-57cb-4c0c-af67-950522e9b32d/Copy+of+NIDJI+Live+in+KK+Poster+2.PNG" alt="NIDJI Live in KK" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">NIDJI Live in KK</div>
+          <div class="ps-card-city">Kota Kinabalu &#127474;&#127486;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/c7ef3678-5b76-4b86-b92d-30a81295d8f1/Denise+Julia+Live+in+Bangkok+-+Poster+with+Logos.png" alt="Denise Julia Bangkok" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Denise Julia Live</div>
+          <div class="ps-card-city">Bangkok &#127481;&#127469;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/99467819-0443-49cc-88f2-49766af53a25/Babychair+Poster+%28Instagram+Post+%2845%29%29+-+3.PNG" alt="Babychair Bangkok" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Babychair</div>
+          <div class="ps-card-city">Bangkok &#127481;&#127469;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/25bc5b96-171a-4ce0-94a5-959f6e5a7ce9/Keenan+Te+TOUR+-+Keenan+Te+Live+in+Bangkok+-+Poster.PNG" alt="Keenan Te Bangkok" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Keenan Te Live in Bangkok</div>
+          <div class="ps-card-city">Bangkok &#127481;&#127469;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/f4181cfc-c7c0-42f7-b696-86c1121821bb/Peder+Elias+Live+in+Singapore+-+Poster.png.png" alt="Peder Elias Singapore" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Peder Elias Live</div>
+          <div class="ps-card-city">Singapore &#127480;&#127468;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/44fad0f4-6d72-46cf-a61c-0e6788877b82/MOSBANK.png" alt="MOSBANK Singapore" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">MOSBANK</div>
+          <div class="ps-card-city">Singapore &#127480;&#127468;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/b3570c8c-1e02-4359-9fe2-5be99e71714d/ASC2NT+Posters+-+10.png" alt="ASC2NT Singapore" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">ASC2NT</div>
+          <div class="ps-card-city">Singapore &#127480;&#127468;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/df4e9e2e-937c-421c-b838-669ea3550ab5/NADHIF+BASALAMAH+Poster.zip+-+6.PNG" alt="Nadhif Basalamah Singapore" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Nadhif Basalamah</div>
+          <div class="ps-card-city">Singapore &#127480;&#127468;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/4c603c8e-ecab-4d24-a598-a92bab5be852/Greyson+Chance+Poster+-+Greyson+Chance+Live+in+Singapore+-+Poster.png" alt="Greyson Chance Singapore" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Greyson Chance</div>
+          <div class="ps-card-city">Singapore &#127480;&#127468;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/81dafa83-1f53-4ecc-bad1-2cc74b444d58/BABYCHAIR+SINGAPORE.png" alt="Babychair Singapore" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Babychair Singapore</div>
+          <div class="ps-card-city">Singapore &#127480;&#127468;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/7126ea0d-b196-4da1-8025-efc0a96b5803/Boyce+Avenue.png" alt="Boyce Avenue Shanghai" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Boyce Avenue</div>
+          <div class="ps-card-city">Shanghai &#127464;&#127475;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/7126ea0d-b196-4da1-8025-efc0a96b5803/Boyce+Avenue.png" alt="Boyce Avenue Beijing" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Boyce Avenue</div>
+          <div class="ps-card-city">Beijing &#127464;&#127475;</div>
+        </div>
+      </div>
+
+      <div class="ps-card" data-year="2025">
+        <img class="ps-card-img" src="https://images.squarespace-cdn.com/content/v1/67230e149bb68854ff7143d9/a87f5dfe-0944-4bf4-86a3-74b1a076057d/Keenan+Te+Live+in+Tokyo+-+Poster.png" alt="Keenan Te Live in Tokyo 2025" loading="lazy">
+        <span class="ps-card-year-badge y2025">2025</span>
+        <div class="ps-card-overlay">
+          <div class="ps-card-name">Keenan Te Live in Tokyo</div>
+          <div class="ps-card-city">Tokyo &#127471;&#127477;</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider-line">
+
 <!-- TESTIMONIALS -->
 <section id="testimonials" class="section">
   <div class="container">
@@ -624,7 +971,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
         <span class="testi-type testi-artist">Artist</span>
         <p class="testi-quote">I had 38,000 monthly listeners and zero shows. Linked my Spotify, and had 3 booking enquiries inside a week. My streaming audience finally became a real one.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">LC</div>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#8B5CF6,#D946EF)">LC</div>
           <div><div class="testi-name">Lim Cai Xin</div><div class="testi-role">Indie Pop Artist, Kuala Lumpur</div></div>
         </div>
       </div>
@@ -632,7 +979,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
         <span class="testi-type testi-promoter">Promoter</span>
         <p class="testi-quote">I used to take a punt on every independent act. Now I can see exactly how many of their Spotify listeners are in Singapore before I make the call. The data makes the decision easy.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#06B6D4,#7C3AED)">NT</div>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#22D3EE,#8B5CF6)">NT</div>
           <div><div class="testi-name">Nathan Teo</div><div class="testi-role">Venue Director, Singapore</div></div>
         </div>
       </div>
@@ -640,7 +987,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
         <span class="testi-type testi-artist">Artist</span>
         <p class="testi-quote">5 countries, 6 months, no manager, no agent. ATP made every single intro. If you're still waiting to "be discovered" — you're doing it wrong.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#1DB954,#06B6D4)">RP</div>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#1DB954,#22D3EE)">RP</div>
           <div><div class="testi-name">Rina Putri</div><div class="testi-role">R&amp;B Artist, Jakarta</div></div>
         </div>
       </div>
@@ -648,14 +995,13 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
         <span class="testi-type testi-promoter">Promoter</span>
         <p class="testi-quote">Two artists found on ATP, both sold out our 500-cap venue. Their Spotify data told me it would happen — I just had to show up and open the doors.</p>
         <div class="testi-author">
-          <div class="testi-avatar" style="background:linear-gradient(135deg,#EC4899,#F59E0B)">KP</div>
+          <div class="testi-avatar" style="background:linear-gradient(135deg,#D946EF,#F59E0B)">KP</div>
           <div><div class="testi-name">Kasem Prachaya</div><div class="testi-role">Independent Promoter, Bangkok</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
 
 <!-- ARTIST MODAL -->
 <div class="modal-overlay" id="artist-modal" onclick="closeModalOutside(event,'artist-modal')">
@@ -795,7 +1141,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
           <label>Artist Photo</label>
           <label class="file-input-styled">
             <input type="file" accept="image/*">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#71717A" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
             <span class="file-label">Click to upload photo (JPG, PNG &#8212; max 5MB)</span>
           </label>
         </div>
@@ -808,222 +1154,6 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
     </form>
   </div>
 </div>
-
-
-<!-- PAST SHOWS -->
-<section id="past-shows" class="section">
-  <div class="container">
-    <div class="fade-in" style="text-align:center">
-      <p class="section-label">Track Record</p>
-      <h2 class="section-title">Shows We've <span class="gradient-text">Produced.</span></h2>
-      <p class="section-sub" style="margin:0 auto 32px">A snapshot of live events brought to Asia by our team — the proof that independent artists can fill rooms across the continent.</p>
-      <div class="past-shows-filters" style="display:inline-flex;gap:10px;margin-bottom:36px">
-        <button class="ps-filter-btn active" onclick="filterShows('all',this)" style="padding:8px 22px;border-radius:50px;font-weight:600;font-size:14px;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:linear-gradient(135deg,var(--violet),var(--pink));color:#fff;transition:all 0.3s">All</button>
-        <button class="ps-filter-btn" onclick="filterShows('2026',this)" style="padding:8px 22px;border-radius:50px;font-weight:600;font-size:14px;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:var(--muted);transition:all 0.3s">2026</button>
-        <button class="ps-filter-btn" onclick="filterShows('2025',this)" style="padding:8px 22px;border-radius:50px;font-weight:600;font-size:14px;cursor:pointer;border:1px solid rgba(255,255,255,0.15);background:transparent;color:var(--muted);transition:all 0.3s">2025</button>
-      </div>
-    </div>
-    <div class="past-shows-grid fade-in" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px">
-
-      <div class="ps-card" data-year="2026" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(124,58,237,0.25);color:#a78bfa;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2026</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127471;&#127477;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Tokyo, Japan</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Keenan Te Live in Tokyo</div>
-      </div>
-
-      <div class="ps-card" data-year="2026" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(124,58,237,0.25);color:#a78bfa;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2026</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127472;&#127479;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Seoul, South Korea</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Fan Meeting (Artist TBA)</div>
-      </div>
-
-      <div class="ps-card" data-year="2026" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(124,58,237,0.25);color:#a78bfa;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2026</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127480;&#127468;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Singapore</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Bounprem Fan Meeting</div>
-      </div>
-
-      <div class="ps-card" data-year="2026" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(124,58,237,0.25);color:#a78bfa;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2026</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127477;&#127469;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Manila, Philippines</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">JAY207 Live in Manila</div>
-      </div>
-
-      <div class="ps-card" data-year="2026" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(124,58,237,0.25);color:#a78bfa;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2026</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127481;&#127484;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Taipei, Taiwan</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Wisp Live in Taiwan</div>
-      </div>
-
-      <div class="ps-card" data-year="2026" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(124,58,237,0.25);color:#a78bfa;font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2026</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127469;&#127472;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Hong Kong</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Event TBA</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kuala Lumpur, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">The Click Five</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kuala Lumpur, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Kentaro Sakaguchi</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kuala Lumpur, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">slchld Live in KL</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kuala Lumpur, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Nadhif Basalamah</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kuala Lumpur, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Jonas Blue</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kuala Lumpur, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Johnny Stimson Tour</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kuala Lumpur, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Peder Elias Live in KL</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kuala Lumpur, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Hoobastank Live in KL</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kota Kinabalu, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Nick Carter</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kota Kinabalu, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">The Click Five</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127474;&#127486;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Kota Kinabalu, Malaysia</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">NIDJI Live in KK</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127481;&#127469;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Bangkok, Thailand</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Denise Julia Live</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127481;&#127469;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Bangkok, Thailand</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Babychair</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127481;&#127469;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Bangkok, Thailand</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Keenan Te Live in Bangkok</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127480;&#127468;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Singapore</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Peder Elias Live</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127480;&#127468;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Singapore</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">MOSBANK</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127480;&#127468;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Singapore</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">ASC2NT</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127480;&#127468;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Singapore</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Nadhif Basalamah</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127480;&#127468;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Singapore</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Greyson Chance</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127480;&#127468;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Singapore</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Babychair Singapore</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127464;&#127475;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Shanghai, China</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Boyce Avenue</div>
-      </div>
-
-      <div class="ps-card" data-year="2025" style="background:rgba(22,22,40,0.7);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:20px;position:relative;transition:border-color 0.3s">
-        <span style="position:absolute;top:14px;right:14px;background:rgba(6,182,212,0.18);color:var(--cyan);font-size:11px;font-weight:700;padding:3px 10px;border-radius:50px;letter-spacing:0.5px">2025</span>
-        <div style="font-size:22px;margin-bottom:8px">&#127464;&#127475;</div>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:4px">Beijing, China</div>
-        <div style="font-size:16px;font-weight:700;font-family:'DM Sans',sans-serif;background:linear-gradient(135deg,var(--violet),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Boyce Avenue</div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- TOAST -->
 <div class="toast" id="toast">
@@ -1038,7 +1168,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
       <div class="footer-brand">
         <a href="#" class="nav-logo" style="font-size:18px">
           <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
-            <defs><linearGradient id="flg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#7C3AED"/><stop offset="100%" stop-color="#EC4899"/></linearGradient></defs>
+            <defs><linearGradient id="flg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8B5CF6"/><stop offset="100%" stop-color="#D946EF"/></linearGradient></defs>
             <circle cx="14" cy="14" r="13" fill="url(#flg)" opacity="0.2" stroke="url(#flg)" stroke-width="1.5"/>
             <path d="M8 19V11l3-2v6M14 19V9l3-2v8M20 19V13" stroke="url(#flg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="8" cy="19" r="1.5" fill="url(#flg)"/>
@@ -1047,7 +1177,7 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
           </svg>
           Artist Tour Pass
         </a>
-        <p>Bridging the gap between streaming numbers and real fans..</p>
+        <p>Bridging the gap between streaming numbers and real fans.</p>
       </div>
       <div class="footer-col">
         <h4>Platform</h4>
@@ -1087,13 +1217,9 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border)}
 // Past Shows filter
 function filterShows(year, btn) {
   document.querySelectorAll('.ps-filter-btn').forEach(function(b) {
-    b.style.background = 'transparent';
-    b.style.color = 'var(--muted)';
+    b.classList.remove('active');
   });
-  if (btn) {
-    btn.style.background = 'linear-gradient(135deg,var(--violet),var(--pink))';
-    btn.style.color = '#fff';
-  }
+  if (btn) btn.classList.add('active');
   document.querySelectorAll('.ps-card').forEach(function(card) {
     if (year === 'all' || card.getAttribute('data-year') === year) {
       card.style.display = '';
@@ -1157,29 +1283,6 @@ function closeMenu() {
   document.getElementById('mobile-menu').classList.remove('open');
 }
 
-// Animated counters (run once)
-var countersRun = false;
-function animateCounters() {
-  if (countersRun) return;
-  countersRun = true;
-  document.querySelectorAll('[data-target]').forEach(function(el) {
-    var target = parseInt(el.getAttribute('data-target'));
-    var duration = 2000;
-    var steps = 60;
-    var increment = target / steps;
-    var current = 0;
-    var timer = setInterval(function() {
-      current = Math.min(current + increment, target);
-      if (target >= 1000) {
-        el.textContent = Math.round(current).toLocaleString() + '+';
-      } else {
-        el.textContent = Math.round(current) + (target === 12 ? '' : '+');
-      }
-      if (current >= target) clearInterval(timer);
-    }, duration / steps);
-  });
-}
-
 // IntersectionObserver for fade-ins
 var io = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
@@ -1187,20 +1290,8 @@ var io = new IntersectionObserver(function(entries) {
       entry.target.classList.add('visible');
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(function(el){ io.observe(el); });
-
-// Counter observer
-var statsEl = document.getElementById('stats');
-if (statsEl) {
-  var statsIo = new IntersectionObserver(function(entries) {
-    if (entries[0].isIntersecting) {
-      animateCounters();
-      statsIo.disconnect();
-    }
-  }, { threshold: 0.3 });
-  statsIo.observe(statsEl);
-}
 </script>
 </body>
 </html>
