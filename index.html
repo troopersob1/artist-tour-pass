@@ -240,18 +240,110 @@ footer{padding:48px 0 32px;border-top:1px solid var(--border);background:#080810
 .footer-bottom{margin-top:40px;padding-top:24px;border-top:1px solid var(--border);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
 .footer-bottom p{font-size:13px;color:var(--muted)}
 
+/* ===========================
+   TABLET (max 900px)
+=========================== */
+@media(max-width:900px){
+  .hero-poster-zone{display:none}
+  .hero-wrap{grid-template-columns:1fr!important;gap:32px}
+  #hero{padding:120px 0 60px;min-height:auto}
+}
+
+/* ===========================
+   MOBILE (max 768px)
+=========================== */
 @media(max-width:768px){
+  /* Nav */
   .nav-links,.nav-ctas{display:none}
   .hamburger{display:flex}
+
+  /* Hero */
+  #hero{padding:100px 0 48px}
+  #hero h1{font-size:clamp(36px,9vw,52px);line-height:1.05}
+  #hero .hero-sub{font-size:15px;margin-bottom:28px}
+  .hero-ctas{flex-direction:column;gap:10px}
+  .hero-ctas .btn{width:100%;justify-content:center}
+  .hero-badge{font-size:10px;padding:5px 12px}
+  .hero-poster-scroll{margin-top:24px}
+  .hero-poster-scroll img{width:100px;height:150px}
+
+  /* Sections */
+  .section{padding:52px 0}
+  .container{padding:0 16px}
+  .section-title{font-size:clamp(24px,6vw,32px)}
+  .section-sub{font-size:14px}
+
+  /* How it works */
+  .steps-grid{grid-template-columns:1fr;gap:16px}
+  .step-card{padding:24px 20px}
+  .step-num{width:40px;height:40px;font-size:16px}
+  .step-card h3{font-size:17px}
+
+  /* Artist cards */
+  .artists-grid{grid-template-columns:1fr;gap:16px}
+  .browse-header{flex-direction:column;align-items:flex-start;gap:12px}
+  .browse-header .btn{width:100%;justify-content:center}
+  .artist-card{padding:20px}
+  .artist-avatar{width:64px;height:64px;font-size:20px}
+  .artist-name{font-size:16px}
+  .spotify-stats{grid-template-columns:1fr 1fr;gap:6px}
+  .spotify-stat .val{font-size:14px}
+  .artist-card-btns{flex-direction:column;gap:8px}
+  .artist-card-btns .btn{flex:none;width:100%;justify-content:center}
+
+  /* Spotify feature */
+  .spotify-feature-grid{grid-template-columns:1fr;gap:12px}
+  .sf-card{padding:18px}
+  #spotify-feature .section-sub{font-size:14px}
+
+  /* Markets */
+  .markets-grid{grid-template-columns:repeat(3,1fr);gap:10px;margin-top:24px}
+  .market-card{padding:14px 10px}
+  .market-flag{font-size:24px}
+  .market-name{font-size:13px}
+  .market-stat{font-size:11px}
+
+  /* Past shows */
+  .past-shows-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .ps-filter-area{gap:8px}
+  .ps-filter-btn{padding:7px 16px;font-size:13px}
+  .ps-card-name{font-size:12px}
+
+  /* Testimonials */
+  .testimonials-grid{grid-template-columns:1fr;gap:14px}
+  .testi-card{padding:20px}
+  .testi-quote{font-size:14px}
+
+  /* Modal */
+  .modal-overlay{padding:12px;align-items:flex-end}
+  .modal{padding:20px 16px;border-radius:16px 16px 0 0;max-height:88vh}
+  .modal h2{font-size:20px}
   .form-grid{grid-template-columns:1fr}
   .months-grid{grid-template-columns:repeat(3,1fr)}
-  .modal{padding:24px}
-  .past-shows-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+
+  /* Footer */
+  .footer-inner{grid-template-columns:1fr 1fr;gap:24px}
+  .footer-brand{grid-column:1/-1}
+  .footer-bottom{flex-direction:column;align-items:flex-start;gap:8px}
+
+  /* Toast */
+  .toast{left:16px;right:16px;bottom:16px;font-size:13px;padding:14px 16px}
 }
+
+/* ===========================
+   SMALL MOBILE (max 480px)
+=========================== */
 @media(max-width:480px){
+  #hero h1{font-size:clamp(32px,10vw,44px)}
+  .hero-poster-scroll img{width:85px;height:128px}
+  .container{padding:0 14px}
+  .markets-grid{grid-template-columns:repeat(2,1fr)}
   .markets-check-grid{grid-template-columns:repeat(2,1fr)}
   .months-grid{grid-template-columns:repeat(2,1fr)}
-  .past-shows-grid{grid-template-columns:repeat(2,1fr)}
+  .past-shows-grid{grid-template-columns:repeat(2,1fr);gap:8px}
+  .footer-inner{grid-template-columns:1fr}
+  .section{padding:40px 0}
+  .modal{max-height:92vh}
 }
 </style>
 </head>
